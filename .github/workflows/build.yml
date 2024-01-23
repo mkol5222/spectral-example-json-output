@@ -16,3 +16,7 @@ jobs:
         run: curl -L "https://spectral-eu.checkpoint.com/latest/x/sh?dsn=${SPECTRAL_DSN}" | sh
       - name: Spectral Scan
         run:  $HOME/.spectral/spectral scan
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spectral-report
+          path: out.json
